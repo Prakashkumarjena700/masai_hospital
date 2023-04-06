@@ -17,7 +17,7 @@ appointmentRouete.get('/', async (req, res) => {
     }
 
     try {
-        let appoinments = await appointmentModel.find(filterobj).sort(sortobj).skip(skip)
+        let appoinments = await appointmentModel.find(filterobj).sort(sortobj).skip(skip).limit(4)
         res.send(appoinments)
     } catch (err) {
 
